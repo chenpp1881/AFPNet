@@ -14,6 +14,7 @@ Attention Module (RPAM).
 - pytorch 1.13.1
 
 # Datasets
+## Datasets for ESC and VSC
 Our proposed method is empirically evaluated on two benchmark datasets, namely Ethereum smart contract (ESC) and VNT Chain smart contract (VSC). Following the methodology of [Liu et al., 2021](https://github.com/Messi-Q/AMEVulDetector)  and [Liu et al. 2021](https://github.com/Messi-Q/GPSCVulDetector), we conduct experiments to assess reentrancy and timestamp dependence vulnerabilities on ESC, while evaluating infinite loop vulnerability on VSC.
 
 Further instructions on the dataset can be found on [Smart-Contract-Dataset](https://github.com/Messi-Q/Smart-Contract-Dataset), which is constantly being updated to provide more details.
@@ -21,6 +22,10 @@ Further instructions on the dataset can be found on [Smart-Contract-Dataset](htt
 We have conducted a thorough examination of the contracts and labels, eliminating any instances of duplication in ESC as outlined in Section IV of the paper. 
 
 The resulting dataset has been designated as ECS_R and can be accessed within the Data file.  
+
+## Dataste for SmartBugs
+
+We discuss our approach with some special methods (including [Wu et al. 2021](https://github.com/wuhongjun15/Peculiar)) in [SmartBugs](https://github.com/smartbugs/smartbugs-wild/tree/master/contracts) dataset in Section V.
 
 # Running
 To run program, please use this command: python Main.py.
