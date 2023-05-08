@@ -1,13 +1,11 @@
 import os
-
 os.environ["CUDA_VISIBLE_DEVICES"] = "0,1"
 import torch
 from transformers import AutoTokenizer
 from GPANet import GPANet
 import argparse
 from Dataset_process import Dataset_process
-import wordcloud
-import matplotlib.pyplot as plt
+
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--is_train', type=bool, default=True)
@@ -30,6 +28,7 @@ parser.add_argument('--dropout', type=float, default=0.3)
 parser.add_argument('--filter_sizes', type=str, default='2,3,5,7,11')
 parser.add_argument('--top_p', type=int, default=3)
 parser.add_argument('--att_head', type=int, default=2)
+
 opts = parser.parse_args()
 tokenizer = AutoTokenizer.from_pretrained("allenai/longformer-base-4096")
 
@@ -62,6 +61,7 @@ def count_token(indecs, batch_index, ids, filter_sizes):
                 count_str += ' '
                 count_str += tokenizer.decode(ids[batch_index, y:y + f].tolist())
     return count_str
+
 
 
 def test(opts):
@@ -105,23 +105,5 @@ def test(opts):
                                                                                                               '')]))
                     f.write('\n')
 
-
-def gen_wordcloud(txt_path, max_words=30)
-    with open(txt_path) as f:
-        text = f.read()
-
-    # 配置词云参数
-    wc = wordcloud.WordCloud(background_color='white', max_words=max_words, contour_width=3, scale=4,
-                             contour_color='steelblue')
-
-    # 生成词云图像
-    wc.generate(text)
-
-    # 显示词云
-    plt.imshow(wc, interpolation='bilinear')
-    plt.axis('off')
-    plt.show()
-
 if __name__ == '__main__':
     test(opts)
-    # gen_wordcloud()
