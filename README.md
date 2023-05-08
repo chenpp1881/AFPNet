@@ -24,19 +24,25 @@ We have conducted a thorough examination of the contracts and labels, eliminatin
 To run program, please use this command: python Main.py.
 Also all the hyper-parameters can be found in Main.py.
 Examples:
+
 `
 python Main.py --project reentrancy 
 `
+
 ## Statistical Analysis
 We also provide a statistical analysis module with the goal of recording significant code snippets captured in FPM. To run this module, please use this command: python Statistical_analysis.py.
 Examples:
+
 `
 python Statistical_analysis.py --resume model_path --fail_code_path ftxt_path --success_code_path stxt_apth --success_n_code_path sntxt_path
 `
+
 We provide a simple word cloud module to visualize them in WordCloud.py.
 You can runing:
+
 `
 python gen_wordcloud.py --cloud_txt_path
 `
+
 And the generated images are as follows:
 ![The wordcloud](figs/wordcloud.png)
