@@ -31,7 +31,7 @@ parser.add_argument('--hidden_dim',type=int,default=200)
 parser.add_argument('--num_channel',type=int,default=100)
 parser.add_argument('--num_layers',type=int,default=6)
 parser.add_argument('--dropout',type=float,default=0.3)
-parser.add_argument('--filter_sizes',type=str,default='2,3,5,7,11')
+parser.add_argument('--filter_sizes',type=list,default=[2,3,5,7,11])
 parser.add_argument('--top_p',type=int,default=3)
 parser.add_argument('--att_head',type=int,default=2)
 opts = parser.parse_args()
@@ -47,12 +47,12 @@ assert opts.epoch > opts.star_epoch
 
 train_loader, test_loader = Dataset_process(opts)
 
-Dot_attention = GPANet(opts)
+GPANet = GPANet(opts)
 # cuda
 USE_CUDA = torch.cuda.is_available()
 device = torch.device("cuda" if USE_CUDA else "cpu")
 device_ids = CUDA_VISIBLE_DEVICES
-model = torch.nn.DataParallel(Dot_attention, device_ids=device_ids)
+model = torch.nn.DataParallel(GPANet, device_ids=device_ids)
 model.to(device)
 
 optimizer = optim.AdamW(model.parameters(), lr=opts.lr)
@@ -74,7 +74,7 @@ def train(epoch,opts):
         ids = token['input_ids']
         ids = ids.to(device)
         target = target.to(device)
-        outputs = model(ids, return_indecs=opts.return_indecs, seq_model=opts.seq_model)
+        outputs = model(ids, opts)
         loss = criterion(outputs, target)
 
         optimizer.zero_grad()
@@ -93,7 +93,7 @@ def test(opts):
             token = tokenizer(list(inputs), padding=True, return_tensors='pt')
             ids = token['input_ids']
             ids, label = ids.to(device), label.to(device)
-            outputs = model(ids, return_indecs=opts.return_indecs, seq_model=opts.seq_model)
+            outputs = model(ids, opts)
             _, predicted = torch.max(outputs.data, dim=1)
             all_preds.extend(predicted)
             all_labels.extend(label)
