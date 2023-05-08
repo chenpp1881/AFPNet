@@ -18,11 +18,15 @@ Our proposed method is empirically evaluated on two benchmark datasets, namely E
 
 Further instructions on the dataset can be found on [Smart-Contract-Dataset](https://github.com/Messi-Q/Smart-Contract-Dataset), which is constantly being updated to provide more details.
 
-We have conducted a thorough examination of the contracts and labels, eliminating any instances of duplication in ESC as outlined in Section IV of the paper. The resulting dataset has been designated as ECS_R and can be accessed within the Data file.  
+We have conducted a thorough examination of the contracts and labels, eliminating any instances of duplication in ESC as outlined in Section IV of the paper. 
+
+The resulting dataset has been designated as ECS_R and can be accessed within the Data file.  
 
 # Running
 To run program, please use this command: python Main.py.
+
 Also all the hyper-parameters can be found in Main.py.
+
 Examples:
 
 `
@@ -30,7 +34,9 @@ python Main.py --project reentrancy
 `
 
 ## Statistical Analysis
+
 We also provide a statistical analysis module with the goal of recording significant code snippets captured in FPM. To run this module, please use this command: python Statistical_analysis.py.
+
 Examples:
 
 `
@@ -38,6 +44,7 @@ python Statistical_analysis.py --resume model_path --fail_code_path ftxt_path --
 `
 
 We provide a simple word cloud module to visualize them in WordCloud.py.
+
 You can runing:
 
 `
