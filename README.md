@@ -50,6 +50,3 @@ You can runing:
 `
 python gen_wordcloud.py --cloud_txt_path
 `
-
-And the generated images are as follows:
-![The wordcloud](figs/wordcloud.png)
