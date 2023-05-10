@@ -4,7 +4,6 @@ import torch
 from SubLayerConnection import SublayerConnection
 from Multihead_Attention import MultiHeadedAttention
 
-
 class FPM(nn.Module):
     def __init__(self, opts, pad_idx=0):
         # default : num_embeddings = 50265, filter_sizes = [2, 3, 5, 7, 11], hidden_dim = 200, num_channel = 100,
@@ -76,8 +75,5 @@ class GPANet(nn.Module):
         if opts.seq_model == 'GRU':
             x, _ = self.GRU(x)
         x = (x_res + x) / 2
-        if opts.return_indecs:
-            return F.softmax(
-                self.output(x.reshape(-1, self.num_channel * (self.top_p + 1) * self.filter_sizes))), indecs
-        else:
-            return F.softmax(self.output(x.reshape(-1, self.num_channel * (self.top_p + 1) * self.filter_sizes))), None
+
+        return F.softmax(self.output(x.reshape(-1, self.num_channel * (self.top_p + 1) * self.filter_sizes))), indecs
