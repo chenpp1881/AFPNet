@@ -2,7 +2,9 @@
 This repo is a paper of python implementation : Improving Smart Contract Vulnerability Detection via Plug-and-Play Feature Perception Module
 
 # Framework
+
 ![The overview of GPANet](figs/overview.png)
+
 The overview of our proposed method GPANet is illustrated in the Figure, which consists of two components: Feature Perception Module (FPM) and Relationship Perception
 Attention Module (RPAM).
 
@@ -28,9 +30,9 @@ The resulting dataset has been designated as ECS_R and can be accessed within th
 We discuss our approach with some special methods (including [Wu et al. 2021](https://github.com/wuhongjun15/Peculiar)) in [SmartBugs](https://github.com/smartbugs/smartbugs-wild/tree/master/contracts) dataset in Section V.
 
 # Running
-To run program, please use this command: python Main.py.
+To run program, please use this command: python `Main.py`.
 
-Also all the hyper-parameters can be found in Main.py.
+Also all the hyper-parameters can be found in `Main.py`.
 
 Examples:
 
@@ -40,7 +42,7 @@ python Main.py --project reentrancy
 
 ## Statistical Analysis
 
-We also provide a statistical analysis module with the goal of recording significant code snippets captured in FPM. To run this module, please use this command: python Statistical_analysis.py.
+We also provide a statistical analysis module with the goal of recording significant code snippets captured in FPM. To run this module, please use this command: python `Statistical_analysis.py`.
 
 Examples:
 
@@ -48,7 +50,7 @@ Examples:
 python Statistical_analysis.py --resume model_path --fail_code_path ftxt_path --success_code_path stxt_apth --success_n_code_path sntxt_path
 `
 
-We provide a simple word cloud module to visualize them in WordCloud.py.
+We provide a simple word cloud module to visualize them in `WordCloud.py`.
 
 You can runing:
 
