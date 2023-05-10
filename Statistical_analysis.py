@@ -25,7 +25,7 @@ parser.add_argument('--hidden_dim', type=int, default=200)
 parser.add_argument('--num_channel', type=int, default=100)
 parser.add_argument('--num_layers', type=int, default=6)
 parser.add_argument('--dropout', type=float, default=0.3)
-parser.add_argument('--filter_sizes', type=str, default='2,3,5,7,11')
+parser.add_argument('--filter_sizes', type=list, default=[2,3,5,7,11])
 parser.add_argument('--top_p', type=int, default=3)
 parser.add_argument('--att_head', type=int, default=2)
 
