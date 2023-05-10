@@ -55,5 +55,5 @@ We provide a simple word cloud module to visualize them in `WordCloud.py`.
 You can runing:
 
 `
-python WoedCloud.py --cloud_txt_path ctxt_path
+python WordCloud.py --cloud_txt_path ctxt_path
 `
