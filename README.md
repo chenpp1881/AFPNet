@@ -3,7 +3,7 @@ This repo is a paper of python implementation : Vulnerability-Hunter: An Adaptiv
 
 # Framework
 
-![The overview of AFPNet](figs/overview.png)
+![The overview of AFPNet](figs/framework.png)
 
 The overview of our proposed method AFPNet is illustrated in the Figure, which consists of two components: Feature Perception Module (FPM) and Relationship Perception
 Attention Module (RPAM).
