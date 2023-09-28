@@ -1,11 +1,11 @@
-# GPANet
-This repo is a paper of python implementation : Improving Smart Contract Vulnerability Detection via Plug-and-Play Feature Perception Module
+# AFPNet
+This repo is a paper of python implementation : Vulnerability-Hunter: An Adaptively Feature Perception Attention Network for Smart Contract Vulnerabilities.
 
 # Framework
 
-![The overview of GPANet](figs/overview.png)
+![The overview of AFPNet](figs/overview.png)
 
-The overview of our proposed method GPANet is illustrated in the Figure, which consists of two components: Feature Perception Module (FPM) and Relationship Perception
+The overview of our proposed method AFPNet is illustrated in the Figure, which consists of two components: Feature Perception Module (FPM) and Relationship Perception
 Attention Module (RPAM).
 
 # Required Packages
